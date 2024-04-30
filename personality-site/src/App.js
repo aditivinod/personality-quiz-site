@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import Result from './pages/ResultPage/Result';
+import StartScreen from './pages/StartScreen/StartScreen';
+import TestQuestion from './pages/TestQuestion/TestQuestion';
 
 function App() {
   return (
