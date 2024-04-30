@@ -1,27 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Result from './pages/ResultPage/Result';
 import StartScreen from './pages/StartScreen/StartScreen';
 import TestQuestion from './pages/TestQuestion/TestQuestion';
 
 function App() {
+  console.log("Rendering App.")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="Organ Quiz">
+        <header className="App-Header">
+          {
+            <p>Replace with starting screen later</p>
+          }
+        </header>
+        <Routes>
+          <Route path="/" element={<StartScreen />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
