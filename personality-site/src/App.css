@@ -37,7 +37,6 @@
   }
 }
 
-
 body {
   background-color: #045a54;
   color: white;
@@ -53,20 +52,22 @@ body {
 .container {
   position: absolute;
   text-align: center;
+  width: 40%;
+  height: 100%;
 }
 
 .titleText {
   position: absolute;
-  top: 10px;
+  top: 90px;
   left: 50%;
   transform: translate(-50%, -55%);
 }
 
 .subText {
   position: absolute;
-  top: 80px;
-  left: 60%;
-  transform: translate(-50%, -60%);
+  top: 0px;
+  left: 20%;
+  transform: translate(0%, 0%);
   width: 100%;
 }
 
