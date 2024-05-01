@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './TestQuestion.css'
 
 function TestQuestion({questions, current}){
     console.log("Question Page.")

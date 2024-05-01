@@ -1,5 +1,4 @@
 import React from 'react';
-import './TestQuestion.css'
 
 function TestQuestion({questions, current}){
     console.log("Question Page.")
