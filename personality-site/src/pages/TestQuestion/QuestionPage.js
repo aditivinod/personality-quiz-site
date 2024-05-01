@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TestQuestion.css'
 
 function TestQuestion({questions, current}){
     console.log("Question Page.")
     // Current state
     const [question, setQuestion] = useState(0);
+    const navigate = useNavigate();
 
     // Go to prev question
     const previous = () => {
@@ -13,7 +15,11 @@ function TestQuestion({questions, current}){
 
     // Go to next question
     const next = () => {
-        setQuestion(idx => Math.min(idx + 1, questions.length-1))
+        if (question == questions.length - 1){
+            navigate('/result');
+        } else {
+            setQuestion(idx => Math.min(idx + 1, questions.length-1));
+        }
     }
 
     const curr = questions[question];
@@ -40,10 +46,10 @@ function TestQuestion({questions, current}){
                         ))}
                     </div>
                     <div className="navigationButtons">
-                        <button type="button" onClick={previous} disabled={question === 0}>
+                        <button type="button" onClick={previous} disabled={question == 0}>
                             Previous
                         </button>
-                        <button type="button" onClick={next} disabled={question === questions.length - 1}>
+                        <button type="button" onClick={next} disabled={question == questions.length - 1}>
                             Next
                         </button>
                     </div>
