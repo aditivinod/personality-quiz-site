@@ -1,28 +1,23 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Result from './pages/ResultPage/Result';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StartScreen from './pages/StartScreen/StartScreen';
 import TestQuestion from './pages/TestQuestion/TestQuestion';
+import QuestionPage from './pages/TestQuestion/QuestionPage'
+import questions from './pages/TestQuestion/Questions'; // Import questions data
+import Result from './pages/ResultPage/Result';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  console.log('Rendering App.')
+  return(
+    <Router>
+      <Routes>
+        <Route path="/" element={<StartScreen />} />
+        <Route path="/test-question" element={<QuestionPage questions={questions} />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
+    </Router>
   );
 }
-
 export default App;
