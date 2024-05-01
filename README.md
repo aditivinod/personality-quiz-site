@@ -3,7 +3,7 @@ A website with a fun personality quiz that provides characters & some key charac
 
 Each question of the quiz is on a separate page and users can navigate back to previous questions prior to submission.\
 Users can compare against historical scores as well as others' scores.\
-Results can be shared via downloading the final graphic.\
+Results can be shared via downloading the final graphic.
 ## Challenges
 - The most interesting challenges you encountered
 ## Usage
@@ -16,6 +16,7 @@ In frontend directory (personality-site)
 - `npm install`
 - `npm install react-router-dom`
 - `npm run build`
+
 In root directory
 - `pip install Flask`
 - `pip install -U Flask-SQLAlchemy`
