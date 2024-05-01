@@ -1,11 +1,9 @@
 import React from 'react';
 
 function Result(){
-    console.log("Question Page")
+    console.log("Result Page.")
     return(
-        <div>
-
-        </div>
+        <h1>Result</h1>
     )
 }
 

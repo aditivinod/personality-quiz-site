@@ -1,11 +1,9 @@
 import React from 'react';
 
 function StartScreen(){
-    console.log("Question Page")
+    console.log("Start Screen.")
     return(
-        <div>
-            <h1>Start Screen</h1>
-        </div>
+        <h1>Start Screen</h1>
     )
 }
 
