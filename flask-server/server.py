@@ -30,6 +30,7 @@ class QuizResult(db.Model):
 with app.app_context():
     db.create_all()
 
+# Save quiz question results into a row.
 @app.route('/api/quiz', methods=['POST'])
 def save_quiz_result():
     data = request.json
@@ -49,6 +50,12 @@ def save_quiz_result():
     db.session.commit()
 
     return jsonify({"message": "Quiz result saved successfully."})
+
+@app.route('/api/result', methods=['GET'])
+def post_result():
+    totals = QuizResult.calculate_totals()
+    result = max(totals, key=lambda x: x[1])
+    return jsonify({"result": result})
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
