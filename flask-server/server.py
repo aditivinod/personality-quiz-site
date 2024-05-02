@@ -86,7 +86,7 @@ def post_result():
 
     # Calculate the percentage of users with the same result class as the current user
     same_result_class = QuizResult.query.filter_by(response_type=result_class).distinct(QuizResult.user_id).count()
-    percentage = (same_result_class / total_users) * 100 if total_users != 0 else 0
+    percentage = round((same_result_class / total_users) * 100 if total_users != 0 else 0, 2)
 
     return jsonify({
         "result_class": result_class,
