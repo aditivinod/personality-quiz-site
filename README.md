@@ -6,9 +6,10 @@ Users can compare against historical scores as well as others' scores.\
 Results can be shared via downloading the final graphic.
 ## Challenges
 - Laying out graphics over the background.
-- Making the final pages look presentable.
 - Creating and updating a SQL database through a front end while maintaining certain constraints (ex: each question should only be added once, storing the answered status of questions, and calculating final results.
 - Figuring out how to properly debug the backend-frontend interactions when values were the wrong type or not being sent correctly.
+- Creating and passing userIDs through the personality quiz; generating a new userID upon restarting the quiz.
+- Calculating the percentage of users with the same result as the current user. 
 ## Usage
 ### Dependencies
 - [React](https://react.dev/)
