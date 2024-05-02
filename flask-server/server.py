@@ -54,8 +54,13 @@ def save_quiz_result():
 @app.route('/api/result', methods=['GET'])
 def post_result():
     totals = QuizResult.calculate_totals()
-    result = max(totals, key=lambda x: x[1])
-    return jsonify({"result": result})
+    result = max(totals, key=lambda x: x[0][1])
+    result_class = result[0]
+    result_qs_selected = result[1]
+    return jsonify({
+        "result_class": result_class,
+        "result_qs_selected": result_qs_selected
+        })
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
