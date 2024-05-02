@@ -8,18 +8,19 @@ db = SQLAlchemy(app)
 # DB model
 class QuizResult(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    question_1 = db.Column(db.String(100))
-    question_2 = db.Column(db.String(100))
-    question_3 = db.Column(db.String(100))
-    question_4 = db.Column(db.String(100))
-    question_5 = db.Column(db.String(100))
-    question_6 = db.Column(db.String(100))
-    question_7 = db.Column(db.String(100))
-    question_8 = db.Column(db.String(100))
-    question_9 = db.Column(db.String(100))
-    question_10 = db.Column(db.String(100))
-    question_11 = db.Column(db.String(100))
-    question_12 = db.Column(db.String(100))
+    question_number = db.Column(db.Integer)
+    response_type = db.Column(db.String(50))
+    answered = db.Column(db.Boolean, default=False)
+
+    def __init__(self, question_number, response_type, answered):
+        self.question_number = question_number
+        self.response_type = response_type
+        self.answered = answered
+
+    @classmethod
+    def calculate_totals(cls):
+        totals = db.session.query(cls.response_type, db.func.count()).group_by(cls.response_type).all()
+        return totals
 
     # String representation of db model
     def __repr__(self):
@@ -32,7 +33,22 @@ with app.app_context():
 @app.route('/api/quiz', methods=['POST'])
 def save_quiz_result():
     data = request.json
-    return jsonify({"message": "User result saved successfully."})
+    question_number = data.get('questionNumber')
+    response = data.get('response')
+
+    # Check if question_number alr exists
+    result_exists = QuizResult.query.filter_by(question_number = question_number).first()
+
+    if result_exists:
+        result_exists.response_type = response
+        result_exists.answered = bool(response)
+    else: 
+        new_result = QuizResult(question_number=question_number, response_type=response, answered=bool(response))
+        db.session.add(new_result)
+
+    db.session.commit()
+
+    return jsonify({"message": "Quiz result saved successfully."})
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
