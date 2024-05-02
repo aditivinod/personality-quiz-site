@@ -27,6 +27,7 @@ function TestQuestion({questions, current}){
 
     // Go to results once all questions are answered
     useEffect(() => {
+        console.log('Answered: ' + answered.size)
         if (answered.size === questions.length) {
             navigate('/result');
         }
@@ -35,7 +36,7 @@ function TestQuestion({questions, current}){
     const handleResponse = (responseKey) => {
         // Mark question as answered
         const currQuestion = question + 1;
-        setQuestion(new Set(answered.add(currQuestion)));
+        setAnswered(prevAnswered => new Set([...prevAnswered, currQuestion]));
 
         // Save response to server
         axios.post('/api/quiz', { questionNumber: currQuestion, response: responseKey })
