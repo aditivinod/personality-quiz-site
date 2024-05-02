@@ -3,7 +3,10 @@ import React from 'react';
 function Result(){
     console.log("Result Page.")
     return(
-        <h1>Result</h1>
+        <div> 
+            <h3>Your Organality:</h3>
+            <div className="resultImg"></div>
+        </div>
     )
 }
 

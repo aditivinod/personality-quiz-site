@@ -149,3 +149,35 @@ button {
   top: 750px;
   left: 30px;
 }
+
+.resultImg {
+  background-color: white;
+  width: 360px; 
+  height: 550px;
+  margin: 0px auto; 
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.brain {
+  background-image: url("/public/assets/brain.jpg");
+  background-size: 360px;
+}
+
+.heart {
+  background-image: url("/public/assets/heart.jpg");
+  background-size: 360px;
+}
+
+.lungs {
+  background-image: url("/public/assets/lungs.jpg");
+  background-size: 360px;
+}
+
+.stomach {
+  background-image: url("/public/assets/stomach.jpg");
+  background-size: 360px;
+}
