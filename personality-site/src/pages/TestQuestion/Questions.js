@@ -67,7 +67,7 @@ const questions = [
         }
     },
     {
-        question: "While you're grinding away, someone sits down next to you with a tearful huff. It’s your friend, and they explain that a class they wanted is being offered for the last time ever because the professor is retiring, but it conflicts with a course that would look good for their major.",
+        question: "While you're grinding away at your work, someone sits down next to you with a tearful huff. It’s one of your friends, and they explain that a class they wanted to take is being offered for the last time ever because the professor is retiring, but it conflicts with a course that would look good for their major.",
         responses: {
             heart: "Would they regret not taking this course? Yes? Then take it over the major requirement.", 
             brain: "Required courses will always exist, they can take that one later.",
