@@ -1,9 +1,11 @@
 # Personality Quiz Site
-A website with a fun personality quiz that provides characters & some key characteristics as a result.
+Aditi Vinod & Sela Domkofski
 
-Each question of the quiz is on a separate page and users can navigate back to previous questions prior to submission.\
-Users can compare against historical scores as well as others' scores.\
-Results can be shared via downloading the final graphic.
+A website with a fun personality quiz that provides characters & some key characteristics as a result.
+- 12 questions
+- 4 outcomes
+- Next & previous buttons on each question page
+- Compares outcome to other users
 ## Challenges
 - Laying out graphics over the background.
 - Creating and updating a SQL database through a front end while maintaining certain constraints (ex: each question should only be added once, storing the answered status of questions, and calculating final results.
@@ -34,6 +36,25 @@ locally so the React app can make API calls.
 `npm start` - Runs the app in development mode. \
 Open [http://localhost:3000](http://localhost:3000) to view it in a browser; the
 page will reload on changes.
+## Architecture
+### Container Diagram
+![Container Diagram](./personality-site/public/assets/container_diagram.png)
+### Frontend
+Components\
+![Components](./personality-site/public/assets/frontend_components.png)
+
+Layouts\
+![Layouts](./personality-site/public/assets/layout.png)
+### Backend
+Creating a User\
+![Creating a User](./personality-site/public/assets/user_creation.png)
+
+Database Structure\
+Saving Quiz Information\
+![Saving Quiz Info](./personality-site/public/assets/saving_quiz_info.png)
+
+Result Navigation
+![Result Navigation](./personality-site/public/assets/result_navigation.png)
 
 
 
