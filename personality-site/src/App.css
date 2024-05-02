@@ -174,9 +174,7 @@ h3 {
 }
 
 .Percent {
-  position: absolute;
-  top: 590px;
-  transform: translate(1%);
+  transform: translate(0%, 2700%);
 }
 
 .brain {
