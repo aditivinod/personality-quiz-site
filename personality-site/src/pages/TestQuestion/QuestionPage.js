@@ -29,9 +29,9 @@ function TestQuestion({questions, current}){
     } else {
         return (
             <div className="page">
-                <img src={process.env.PUBLIC_URL + "/assets/background.jpg"} alt="Intro Page" className="page" style={{ height: '760px' }} />
+                <div className="Qbackground">
                 <div className="container">
-                    <div className="titleText">
+                    <div className="QtitleText">
                         <h1>Question {curr + 1}</h1>
                         <div className="questionText">
                             <h4>{curr.question}</h4>
@@ -45,14 +45,14 @@ function TestQuestion({questions, current}){
                         ))}
                     </div>
                     <div className="navigationButtons">
-                        <button type="button" onClick={previous} disabled={question == 0}>
+                        <button type="button" className="buttonPrev" onClick={previous} disabled={question == 0}>
                             Previous
                         </button>
-                        <button type="button" onClick={next} disabled={question == questions.length - 1}>
+                        <button type="button" className="buttonNext" onClick={next} disabled={question == questions.length - 1}>
                             Next
                         </button>
                     </div>
-                </div>
+                </div></div>
             </div>
         )
     }

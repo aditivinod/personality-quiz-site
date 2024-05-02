@@ -37,7 +37,6 @@
   }
 }
 
-
 body {
   background-color: #045a54;
   color: white;
@@ -53,36 +52,55 @@ body {
 .container {
   position: absolute;
   text-align: center;
+  width: 40%;
+  height: 100%;
 }
+
+.background {
+  background-image: url("/public/assets/title.jpg");
+  width: 100%; 
+  height: 600px;
+  background-size: 362px;
+}
+
+.Qbackground {
+  background-image: url("/public/assets/background.jpg");
+  width: 100%; 
+  height: 850px;
+  }
 
 .titleText {
   position: absolute;
-  top: 10px;
+  top: 80px;
   left: 50%;
   transform: translate(-50%, -55%);
+  font-weight: bolder; 
 }
 
 .subText {
   position: absolute;
-  top: 80px;
-  left: 60%;
-  transform: translate(-50%, -60%);
+  top: 50px;
+  left: 15%;
   width: 100%;
 }
 
 .startButton {
   position: absolute;
-  top: 485px;
+  top: 480px;
   left: 50%;
-  transform: translate(-50%, 30%);
+  transform: translate(-55%, 30%);
   width: 200px;
   height: 80px;
   font-size: 24px;
-  font-family: 'Trebuchet MS', tahoma, sans-serif;
-  font-weight: bold;
-  background-color: white;
-  border: none;
-  border-radius: 18px;
+}
+
+.QtitleText {
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  margin: 0px auto;
+  font-weight: bolder; 
+  width: 300px;
 }
 
 h2 {
@@ -91,11 +109,10 @@ h2 {
 
 .questionText {
   position: absolute;
-  top: 85px;
-  left: 80%;
-  transform: translate(-65%, -20%);
+  top: 75%;
   width: 300px;
   text-align: center;
+  margin: 0px auto;
 }
 
 button {
@@ -107,32 +124,60 @@ button {
   background-color: white;
   border: none;
   border-radius: 18px;
+  margin: 10px;
 }
 
-.answer1 {
+.answerButtons {
   position: absolute;
-  top: 220px;
-  left: 50%;
-  transform: translate(-50%, 30%);
+  top: 265px;
+  margin: 0px auto;
+  width: 360px; 
 }
 
-.answer2 {
+.buttonNext {
+  width: 120px;
+  height: 50px;
   position: absolute;
-  top: 350px;
-  left: 50%;
-  transform: translate(-50%, 30%);
+  top: 750px;
+  left: 190px;
 }
 
-.answer3 {
+.buttonPrev {
+  width: 120px;
+  height: 50px;
   position: absolute;
-  top: 480px;
-  left: 50%;
-  transform: translate(-50%, 30%);
+  top: 750px;
+  left: 30px;
 }
 
-.answer4 {
-  position: absolute;
-  top: 610px;
-  left: 50%;
-  transform: translate(-50%, 30%);
+.resultImg {
+  background-color: white;
+  width: 360px; 
+  height: 550px;
+  margin: 0px auto; 
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.brain {
+  background-image: url("/public/assets/brain.jpg");
+  background-size: 360px;
+}
+
+.heart {
+  background-image: url("/public/assets/heart.jpg");
+  background-size: 360px;
+}
+
+.lungs {
+  background-image: url("/public/assets/lungs.jpg");
+  background-size: 360px;
+}
+
+.stomach {
+  background-image: url("/public/assets/stomach.jpg");
+  background-size: 360px;
 }
