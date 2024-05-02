@@ -41,12 +41,13 @@ function Result(){
         }
     };
 
-
     return(
         <div> 
             <h3>Your Organality:</h3>
             {result && (
-                <div className={`resultImg ${getResultClass()}`}></div>
+                <div className={`resultImg ${getResultClass()}`}>
+                    <p className='Percent'>{percentage}% of users are this Organality.</p>
+                </div>
             )}
             <Link to="/">
                 <button type="button" className="restartButton">Go to Start</button>
