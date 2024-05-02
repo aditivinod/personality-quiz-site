@@ -20,13 +20,13 @@ A website with a fun personality quiz that provides characters & some key charac
 - `pip install Flask`
 - `pip install -U Flask-SQLAlchemy`
   
-In frontend directory (personality-site)
+In frontend directory (`personality-site`)
 - `npm install`
 - `npm install react-router-dom`
 - `npm install axios`
 - `npm run build`
 
-In backend directory (flask-server)
+In backend directory (`flask-server`)
 - `python3 -m venv venv`
 - `source venv/bin/activate`
 ### Available Scripts
@@ -40,21 +40,29 @@ page will reload on changes.
 ### Container Diagram
 ![Container Diagram](./personality-site/public/assets/container_diagram.png)
 ### Frontend
-Components\
+#### Components
 ![Components](./personality-site/public/assets/frontend_components.png)
+UserID is set on rendering the start screen and is passed through the next pages by adding to the URL (ex: `/question?userID=${userID}`).
 
-Layouts\
+#### Layouts
 ![Layouts](./personality-site/public/assets/layout.png)
 ### Backend
-Creating a User\
+#### Creating a User
 ![Creating a User](./personality-site/public/assets/user_creation.png)
 
-Database Structure\
-Saving Quiz Information\
-![Saving Quiz Info](./personality-site/public/assets/saving_quiz_info.png)
+#### Database Structure
+| ID | Question Number | Result | Answered | Organality |
+| ------------------------------------ | - | ------- | - | ------- |
+| dfceb961-bca8-47d0-ae9d-7a5316b9f290 | 1 | stomach | 1 | stomach |
 
-Result Navigation
+SQL database with 1 example row depicted. "Organality" is the result class that a single user recieves.
+#### Saving Quiz Information
+![Saving Quiz Info](./personality-site/public/assets/saving_quiz_info.png)
+#### Result Navigation
 ![Result Navigation](./personality-site/public/assets/result_navigation.png)
+"Percentage" is the % of users with the result class as the current user, calculated each time around.
+
+
 
 
 
