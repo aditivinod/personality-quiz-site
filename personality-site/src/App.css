@@ -94,6 +94,16 @@ body {
   font-size: 24px;
 }
 
+.restartButton {
+  position: absolute;
+  top: 630px;
+  left: 50%;
+  transform: translate(-55%, 30%);
+  width: 200px;
+  height: 60px;
+  font-size: 24px;
+}
+
 .QtitleText {
   position: absolute;
   top: 0px;
