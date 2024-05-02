@@ -15,16 +15,21 @@ How to bundle & run code.
 In frontend directory (personality-site)
 - `npm install`
 - `npm install react-router-dom`
+- `npm install axios`
 - `npm run build`
 
 In root directory
 - `pip install Flask`
 - `pip install -U Flask-SQLAlchemy`
+
+In backend directory (flask-server)
+- `python3 -m venv venv`
+- `source venv/bin/activate`
 ### Available Scripts
 `npm start` - Runs the app in development mode. \
 Open [http://localhost:3000](http://localhost:3000) to view it in a browser; the
 page will reload on changes.
 
-`cd` into `flask-server`, then run `server.py` - Hosts a Flask app
+`cd` into `flask-server`, then run `python server.py` - Hosts a Flask app
 locally so the React app can make API calls.
 
