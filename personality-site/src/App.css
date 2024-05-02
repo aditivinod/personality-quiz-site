@@ -97,7 +97,7 @@ body {
 .QtitleText {
   position: absolute;
   top: 0px;
-  left: 30px;
+  left: 20px;
   margin: 0px auto;
   font-weight: bolder; 
   width: 300px;
@@ -148,36 +148,4 @@ button {
   position: absolute;
   top: 750px;
   left: 30px;
-}
-
-.resultImg {
-  background-color: white;
-  width: 360px; 
-  height: 550px;
-  margin: 0px auto; 
-}
-
-h3 {
-  font-size: 30px;
-  text-align: center;
-}
-
-.brain {
-  background-image: url("/public/assets/brain.jpg");
-  background-size: 360px;
-}
-
-.heart {
-  background-image: url("/public/assets/heart.jpg");
-  background-size: 360px;
-}
-
-.lungs {
-  background-image: url("/public/assets/lungs.jpg");
-  background-size: 360px;
-}
-
-.stomach {
-  background-image: url("/public/assets/stomach.jpg");
-  background-size: 360px;
 }
