@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-function TestQuestion({questions, current}){
+function TestQuestion({questions}){
     console.log("Question Page.")
     // Current state
     const [question, setQuestion] = useState(0);
     const [answered, setAnswered] = useState(new Set());
     const navigate = useNavigate();
+    const location = useLocation();
+    const userID = new URLSearchParams(location.search).get('userID');
 
     // Go to prev question
     const previous = () => {
@@ -16,12 +18,6 @@ function TestQuestion({questions, current}){
 
     // Go to next question
     const next = () => {
-        /*
-        if (question == questions.length - 1){
-            navigate('/result');
-        } else {
-            setQuestion(idx => Math.min(idx + 1, questions.length-1));
-        }*/
         setQuestion(Math.min(question + 1, questions.length - 1));
     }
 
@@ -29,7 +25,7 @@ function TestQuestion({questions, current}){
     useEffect(() => {
         console.log('Answered: ' + answered.size)
         if (answered.size === questions.length) {
-            navigate('/result');
+            navigate(`/result?userID=${userID}`);
         }
     }, [answered, navigate, questions]);
 
@@ -39,7 +35,7 @@ function TestQuestion({questions, current}){
         setAnswered(prevAnswered => new Set([...prevAnswered, currQuestion]));
 
         // Save response to server
-        axios.post('/api/quiz', { questionNumber: currQuestion, response: responseKey })
+        axios.post('/api/quiz', { userID: userID, questionNumber: currQuestion, response: responseKey })
             .then(response => {
                 console.log('Response: ' + response.data.message);
                 next();
@@ -48,7 +44,7 @@ function TestQuestion({questions, current}){
                 console.error('Unable to save result: ', error);
             });
     }
-
+    
     const curr = questions[question];
 
     if (curr == null){
